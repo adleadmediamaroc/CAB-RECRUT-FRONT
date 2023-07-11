@@ -1,0 +1,40 @@
+<div class="login-body d-flex justify-content-center align-items-center">
+  <div class="login-image"></div>
+  <div class="card login-panel p-fluid">
+    <div class="login-panel-content">
+      <div class="p-grid justify-content-between">
+        <div class="p-col-3" style="text-align:left;">
+          <img src="assets/layout/images/login/icon-login.svg" alt="avalon-ng"/>
+
+        </div>
+        <div class="p-col-9" style="text-align:left;">
+          <h2 class="welcome-text">Welcome Guest</h2>
+          <span class="guest-sign-in">Sign in to Avalon Network</span>
+        </div>
+        <div class="p-col-12" style="text-align:left;">
+          <label class="login-label">Username</label>
+          <div class="login-input">
+            <input type="text" name="username" ng-model="username" [(ngModel)]="username" placeholder="Username" pInputText class="form-control"/>
+          </div>
+        </div>
+        <div class="p-col-12" style="text-align:left;">
+          <label class="login-label">Password</label>
+          <div class="login-input">
+            <input type="password" ng-model="password" name="password"  [(ngModel)]="password" placeholder="Password" class="form-control"/>
+          </div>
+        </div>
+        <div class="p-col-12 p-md-6 d-flex justify-content-between">
+          <div class="button-pane">
+            <button pButton class="btn btn-primary" type="button" (click)="onSubmit()" label="Sign In"></button>
+          </div>
+
+          <div class="link-pane">
+            <button class="btn btn-link forgot-password">Forget Password?</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<p style="color: red;text-align: center"><b>{{ errorMessage }}</b></p>
+

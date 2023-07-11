@@ -49,21 +49,20 @@
                 </div>
                 <div class="form-group col-md-4">
                   <label for="inputAddress2">Role</label>
-                  <select class="form-control" id="roleSelect">
+                  <select class="form-control" id="roleSelect" onchange="onRoleChange()">
                     <option>Consultant</option>
                     <option>Client</option>
                     <option>Super Client</option>
                   </select>
                 </div>
 
-                <div class="form-group col-md-4" id="entrepriseField" style="display: none;">
+                <div class="form-group col-md-4">
                   <label for="inputAddress2">Entreprise</label>
-                  <select class="form-control">
+                  <select class="form-control" id="entrepriseSelect" disabled>
                     <option>1</option>
                     <option>2</option>
                   </select>
                 </div>
-
                 <div class="form-group col-md-4">
                   <label for="inputAddress2">Avatar</label>
                   <input type="file" class="form-control" id="inputAddress5" placeholder="">
@@ -81,19 +80,15 @@
     </div>
   </div>
 </main>
-<script src="app/staff/test.js">const roleSelect = document.getElementById('roleSelect');
-const entrepriseField = document.getElementById('entrepriseField');
-var body = document.querySelector('body');
-roleSelect.addEventListener('change', function() {
-  body.style.backgroundColor = 'red';
-  // Changer la couleur en blanc
+<script src="app/staff/test.js">function onRoleChange() {
+  var roleSelect = document.getElementById('roleSelect');
+  var entrepriseSelect = document.getElementById('entrepriseSelect');
+
   if (roleSelect.value === 'Client') {
-    body.style.backgroundColor = 'red';
-    entrepriseField.style.display = 'none';
+    entrepriseSelect.disabled = false;
   } else {
-    entrepriseField.style.display = 'block';
-    body.style.backgroundColor = 'green';
+    entrepriseSelect.disabled = true;
   }
-});
+}
 </script>
 </body>
