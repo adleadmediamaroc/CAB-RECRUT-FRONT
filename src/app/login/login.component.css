@@ -5,7 +5,12 @@
   height: 91vh;
 }
 
+.login-image {
+  height: calc(100% - 380px);
 
+  background-size: cover;
+  background-position: center;
+}
 
 .login-panel {
   width: 100%;

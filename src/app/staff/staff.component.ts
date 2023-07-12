@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {  StaffDTO } from '../models/Staff';
 import { StaffService } from '../services/staff.service';
 
@@ -9,12 +9,14 @@ import { StaffService } from '../services/staff.service';
 
 
 })
-export class StaffComponent {
+export class StaffComponent implements OnInit{
   newStaff: StaffDTO = {} as StaffDTO;
+  role!: string;
+  entrepriseVisible: boolean = false;
 
-  selectedRole!: string;
-  onRoleChange: any;
-
+  ngOnInit() {
+    this.role = ''; // Initialisez la valeur du rôle à une valeur par défaut
+  }
 
   constructor(private staffService: StaffService) {}
 
@@ -30,7 +32,16 @@ export class StaffComponent {
       }
     );
   }
-
-
-
+  onRoleChange() {
+    if (this.role === 'Client') {
+      this.entrepriseVisible = true;
+    } else {
+      this.entrepriseVisible = false;
+    }
   }
+
+
+
+
+
+}

@@ -15,7 +15,10 @@ import {InputTextModule} from "primeng/inputtext";
 import { Component } from '@angular/core';
 
 import { PasswordModule } from 'primeng/password';
+import {AllClientsComponent} from "./all-clients/all-clients.component";
+import { TableModule } from 'primeng/table';
 
+import { ProgressBarModule } from 'primeng/progressbar';
 
 
 @NgModule({
@@ -25,11 +28,14 @@ import { PasswordModule } from 'primeng/password';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
+    AllClientsComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule,HttpClientModule,CommonModule,ButtonModule, InputTextModule,PasswordModule
+    AppRoutingModule,FormsModule,HttpClientModule,CommonModule,ButtonModule, InputTextModule,TableModule,
+    PasswordModule,
+    ProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

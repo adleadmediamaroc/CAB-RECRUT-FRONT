@@ -1,68 +1,77 @@
+<!DOCTYPE html>
+<html>
+
 <body>
 <main>
   <div class="container-fluid">
     <div class="row justify-content-center pt-2">
-      <div class="text-center col">
-
-
-      </div>
+      <div class="text-center col"></div>
     </div>
     <div class="row justify-content-center p-2">
       <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
         <div class="card">
           <div class="card-header text-center">
-            <h4>  Utilisateur<span class="text-primary font-weight-bold"></span></h4>
+            <h4>Utilisateur<span class="text-primary font-weight-bold"></span></h4>
           </div>
           <div class="card-body">
             <form>
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="inputEmail4">Civilité</label>
-                  <input type="text" class="form-control" id="inputEmail4" >
+                  <input type="text" class="form-control" id="inputEmail4" placeholder="Civilité">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputPassword4">Nom</label>
-                  <input type="text" class="form-control" id="inputPassword4" >
+                  <input type="text" class="form-control" id="inputPassword4" placeholder="Nom">
                 </div>
               </div>
+              <div class="form-row justify-content-end">
+                <div class="form-group col-md-4">
+                  <label for="inputAddress">Prénom</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="Prénom">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputEmail">Email</label>
+                  <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputAddress2">Mot de passe</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Mot de passe">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputAddress3">Fonction</label>
+                  <input type="text" class="form-control" id="inputAddress3" placeholder="Fonction">
+                </div>
+              </div>
+
+              <div class="form-row justify-content-end">
+                <div class="form-group col-md-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="inputAddress4">
+                    <label class="form-check-label" for="inputAddress4">Actif</label>
+                  </div>
+                </div>
+              </div>
+
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputAddress">Prenom</label>
-                  <input type="text" class="form-control"  placeholder="" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputAddress">Email</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputAddress2">Password</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="">
-                </div>
-
-                <div class="form-group col-md-4">
-                  <label for="inputAddress2">Fonction</label>
-                  <input type="text" class="form-control" id="inputAddress3" placeholder="">
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputAddress2">Active</label>
-                  <input type="checkbox"  id="inputAddress4" >
-                </div>
-                <div class="form-group col-md-4">
-                  <label for="inputAddress2">Role</label>
-                  <select class="form-control" id="roleSelect" onchange="onRoleChange()">
-                    <option>Consultant</option>
-                    <option>Client</option>
-                    <option>Super Client</option>
+                  <select class="form-control" id="roleSelect" [(ngModel)]="role" (ngModelChange)="onRoleChange()" name="role">
+                    <option value="">Sélectionnez un rôle</option>
+                    <option value="Consultant">Consultant</option>
+                    <option value="Client">Client</option>
+                    <option value="Super Client">Super Client</option>
                   </select>
                 </div>
-
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-4" *ngIf="role === 'Client'">
                   <label for="inputAddress2">Entreprise</label>
-                  <select class="form-control" id="entrepriseSelect" disabled>
+                  <select class="form-control" id="entrepriseSelect" name="entreprise">
                     <option>1</option>
                     <option>2</option>
                   </select>
                 </div>
+              </div>
+
+              <div class="form-row justify-content-center">
                 <div class="form-group col-md-4">
                   <label for="inputAddress2">Avatar</label>
                   <input type="file" class="form-control" id="inputAddress5" placeholder="">
@@ -70,9 +79,11 @@
               </div>
               <br>
               <div class="form-row justify-content-center">
-                <button type="submit" class="btn btn-primary mr-4">Save</button>
-
+                <div class="form-group col-md-4">
+                  <button type="submit" class="btn btn-primary">Add Staff</button>
+                </div>
               </div>
+
             </form>
           </div>
         </div>
@@ -80,15 +91,7 @@
     </div>
   </div>
 </main>
-<script src="app/staff/test.js">function onRoleChange() {
-  var roleSelect = document.getElementById('roleSelect');
-  var entrepriseSelect = document.getElementById('entrepriseSelect');
 
-  if (roleSelect.value === 'Client') {
-    entrepriseSelect.disabled = false;
-  } else {
-    entrepriseSelect.disabled = true;
-  }
-}
-</script>
 </body>
+
+</html>

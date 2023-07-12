@@ -9,27 +9,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/staff">Staffs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/staff">Clients</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/staff">Prospect</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/login">login</a>
+          <a class="nav-link" routerLink="/staffs">Staffs</a>
         </li>
 
-
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Entreprise
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/clients">Clients</a>
+            <a class="dropdown-item" routerLink="/prospect">Prospect</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/login">Login</a>
+        </li>
       </ul>
-      <form class="d-sm-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+      <form class="d-flex justify-content-center">
+        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
       </form>
+
     </div>
   </div>
 </nav>

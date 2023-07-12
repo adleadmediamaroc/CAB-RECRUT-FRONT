@@ -1,13 +1,16 @@
+<body style="background-image: url('assets/layout/images/login/bg-login.jpg'); background-repeat: no-repeat; background-size: cover;background-position: center;">
+
 <div class="login-body d-flex justify-content-center align-items-center">
-  <div class="login-image"></div>
+  <div class="login-image" ></div>
   <div class="card login-panel p-fluid">
     <div class="login-panel-content">
       <div class="p-grid justify-content-between">
-        <div class="p-col-3" style="text-align:left;">
+        <div class="p-col-3" style="text-align:center;">
           <img src="assets/layout/images/login/icon-login.svg" alt="avalon-ng"/>
 
+
         </div>
-        <div class="p-col-9" style="text-align:left;">
+        <div class="p-col-9" style="text-align:center;">
           <h2 class="welcome-text">Welcome Guest</h2>
           <span class="guest-sign-in">Sign in to Avalon Network</span>
         </div>
@@ -25,7 +28,7 @@
         </div>
         <div class="p-col-12 p-md-6 d-flex justify-content-between">
           <div class="button-pane">
-            <button pButton class="btn btn-primary" type="button" (click)="onSubmit()" label="Sign In"></button>
+            <button pButton class="btn btn-info" type="button" (click)="onSubmit()" label="Sign In"></button>
           </div>
 
           <div class="link-pane">
@@ -37,4 +40,4 @@
   </div>
 </div>
 <p style="color: red;text-align: center"><b>{{ errorMessage }}</b></p>
-
+</body>
